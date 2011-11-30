@@ -73,9 +73,7 @@ var guiders = (function($) {
   
     for (var i = myGuider.buttons.length-1; i >= 0; i--) {
       var thisButton = myGuider.buttons[i];
-      var thisButtonElem = $("<a></a>", {
-                              "class" : "guider_button",
-                              "text" : thisButton.name });
+      var thisButtonElem = $("<a></a>").attr({ "class" : "guider_button", "text" : thisButton.name });
       if (typeof thisButton.classString !== "undefined" && thisButton.classString !== null) {
         thisButtonElem.addClass(thisButton.classString);
       }
@@ -105,9 +103,7 @@ var guiders = (function($) {
 
   guiders._addXButton = function(myGuider) {
       var xButtonContainer = myGuider.elem.find(".guider_close");
-      var xButton = $("<div></div>", {
-                      "class" : "x_button",
-                      "role" : "button" });
+      var xButton = $("<div></div>").attr({ "class" : "x_button", "role" : "button" });
       xButtonContainer.append(xButton);
       xButton.click(function() { guiders.hideAll(); });
   };
