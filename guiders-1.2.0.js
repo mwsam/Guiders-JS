@@ -73,7 +73,7 @@ var guiders = (function($) {
   
     for (var i = myGuider.buttons.length-1; i >= 0; i--) {
       var thisButton = myGuider.buttons[i];
-      var thisButtonElem = $("<a></a>").attr({ "class" : "guider_button", "text" : thisButton.name });
+      var thisButtonElem = $("<a></a>").attr("class", "guider_button").text(thisButton.name);
       if (typeof thisButton.classString !== "undefined" && thisButton.classString !== null) {
         thisButtonElem.addClass(thisButton.classString);
       }
